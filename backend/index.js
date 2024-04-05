@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 
 app.get('/activity', (req, res) => {
-  setTimeout(() => res.json(activityDate), 2000);
+  setTimeout(() => res.json(activityDate), 8000);
 });
 
 const port = process.env.PORT || 5000;
