@@ -15,7 +15,6 @@ import SingleOrganization from './components/Organizations/SingleOrganization/Si
 import MainIsLoading from './components/MainIsLoading/MainIsLoading';
 import {
   fetchActivity,
-  selectorActivityList,
   selectorIsLoading,
 } from './redux/slices/activityListSlice';
 //import {
@@ -29,16 +28,13 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const GET_URl = 'http://localhost:5000/activity';
-  const activityList = useSelector(selectorActivityList);
 
   const isLoading = useSelector(selectorIsLoading);
   useEffect(() => {
-    if (!activityList.lenght) {
-      dispatch(fetchActivity(GET_URl));
-    }
+    dispatch(fetchActivity(GET_URl));
   }, []);
   useEffect(() => {
-    if (!isLoading && document.readyState === 'complete') {
+    if (!isLoading) {
       setTimeout(() => setIsLoaded(true), 1000);
     }
   }, [isLoading]);

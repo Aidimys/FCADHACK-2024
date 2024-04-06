@@ -1,9 +1,11 @@
 .header {
   width: 100%;
   background-color: #feba3a;
-  padding: 1.3em;
   display: flex;
   flex-wrap: wrap;
+  position: sticky;
+  padding: 1.1em;
+  top: 0px;
 
   align-items: center;
 }

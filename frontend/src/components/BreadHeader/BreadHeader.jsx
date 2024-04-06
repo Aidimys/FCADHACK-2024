@@ -11,7 +11,7 @@ const BreadHeader = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setbreadLocation(location.pathname));
-  }, [location.pathname]);
+  }, []);
 
   return (
     <header className={styles.header}>
