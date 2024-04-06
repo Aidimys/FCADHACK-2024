@@ -1,7 +1,7 @@
 import styles from './HomeMain.module.css';
 
 const HomeMain = () => {
-  return <div>HomeMain</div>;
+  return <main>HomeMain</main>;
 };
 
 export default HomeMain;
