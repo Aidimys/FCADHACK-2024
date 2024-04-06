@@ -10,6 +10,9 @@ html {
   padding: 0px;
   margin: 0px;
 }
+a {
+  text-decoration: none;
+}
 ul {
   margin: 0px;
   padding: 0px;
@@ -30,8 +33,6 @@ body {
   height: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

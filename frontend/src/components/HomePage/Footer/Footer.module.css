@@ -1,0 +1,31 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 3em;
+  color: #fff;
+
+  background-color: #feba3a;
+}
+.footer > section {
+  margin: 1em;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+}
+a {
+  color: #fff;
+}
+a:hover {
+  text-decoration: underline;
+}
+.descriptionSectionSpan {
+  font-size: 1.3em;
+  text-decoration: underline;
+  margin-bottom: 0.4em;
+}
+.footerUl > li {
+  margin-bottom: 0.3em;
+}
