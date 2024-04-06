@@ -7,8 +7,6 @@
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-
-  justify-content: space-between;
 }
 .headerArticles1 {
   width: inherit;
@@ -16,6 +14,13 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+.accountLogo {
+  width: 2.5em;
+  height: 2.5em;
+  cursor: pointer;
+  color: #fff;
 }
 .headerArticles2 {
   width: inherit;
@@ -24,6 +29,52 @@
   display: flex;
   align-items: center;
 }
+.firstPartSection1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  flex-wrap: wrap;
+}
+.firstPartSection2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.facultiesDiv {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+}
+
 .logo {
   width: 5em;
+}
+.spanFaculties {
+  color: #fff;
+  margin: 1em;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+.spanFaculties:hover {
+  text-decoration: underline;
+}
+@media screen and (min-width: 0px) and (max-width: 376px) {
+  .firstPartSection1 {
+    align-items: center;
+    justify-content: center;
+  }
+  .facultiesDiv {
+    width: 100%;
+  }
+  .logo {
+    width: 7em;
+  }
+  .accountLogo {
+    width: 2.8em;
+    height: 2.8em;
+  }
 }
