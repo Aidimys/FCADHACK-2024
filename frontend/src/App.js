@@ -87,7 +87,7 @@ function App() {
               path="/organizations"
               element={
                 <>
-                  <HomeMain />
+                  <HomeHeader />
                   <Organizations />
                   <Footer />
                 </>
@@ -103,7 +103,16 @@ function App() {
                 </>
               }
             />
-            <Route path="*" element={<NotFound />} />
+            <Route
+              path="*"
+              element={
+                <>
+                  <BreadHeader />
+                  <NotFound />
+                  <Footer />
+                </>
+              }
+            />
           </>
         ) : (
           <Route

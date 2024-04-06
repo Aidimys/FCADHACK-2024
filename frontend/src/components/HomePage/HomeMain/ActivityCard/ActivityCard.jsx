@@ -1,7 +1,13 @@
 import styles from './ActivityCard.module.css';
 
-const ActivityCard = () => {
-  return <section>dsvfdfvs</section>;
+const ActivityCard = ({
+  name,
+  author,
+  description,
+  encouragement,
+  participants,
+}) => {
+  return <section></section>;
 };
 
 export default ActivityCard;
