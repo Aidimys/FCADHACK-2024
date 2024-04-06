@@ -6,7 +6,14 @@
     transform: rotate(360deg);
   }
 }
-
+@keyframes invisible {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .sectionLoading {
   display: flex;
   width: 100%;
@@ -57,4 +64,16 @@
   margin-left: 0.3em;
   font-size: 1.5em;
   color: rgba(255, 0, 0, 0.5);
+}
+.invisible {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  animation: invisible 1s linear 0s 1;
+}
+.invisible > span {
+  font-family: cursive;
+  font-size: 2em;
 }

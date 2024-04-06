@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import HomeHeader from './components/HomePage/HomeHeader/HomeHeader';
 import HomeMain from './components/HomePage/HomeMain/HomeMain';
@@ -12,22 +13,35 @@ import SingleStudent from './components/Students/SingleStudent/SingleStudent';
 import Organizations from './components/Organizations/Organizations/Organizations';
 import SingleOrganization from './components/Organizations/SingleOrganization/SingleOrganization';
 import MainIsLoading from './components/MainIsLoading/MainIsLoading';
+import {
+  fetchActivity,
+  selectorActivityList,
+  selectorIsLoading,
+} from './redux/slices/activityListSlice';
 //import {
 // setIsMainLoaded,
 // selectorIsMainLoaded,
 //} from './redux/slices/isMainLoadedSlice';
 
 function App() {
-  // const dispatch = useDispatch();
-  //const isLoaded = useSelector(selectorIsMainLoaded);
+  const dispatch = useDispatch();
 
   const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    window.onload = () => {
-      setTimeout(() => setIsLoaded(true), 0);
-    };
-  }, []);
 
+  const GET_URl = 'http://localhost:5000/activity';
+  const activityList = useSelector(selectorActivityList);
+
+  const isLoading = useSelector(selectorIsLoading);
+  useEffect(() => {
+    if (!activityList.lenght) {
+      dispatch(fetchActivity(GET_URl));
+    }
+  }, []);
+  useEffect(() => {
+    if (!isLoading && document.readyState === 'complete') {
+      setTimeout(() => setIsLoaded(true), 1000);
+    }
+  }, [isLoading]);
   return (
     <BrowserRouter>
       <Routes>
@@ -39,7 +53,6 @@ function App() {
                 <>
                   <HomeHeader />
                   <HomeMain />
-
                   <Footer />
                 </>
               }
@@ -97,7 +110,15 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </>
         ) : (
-          <Route path="*" element={<MainIsLoading action="waiting" />} />
+          <Route
+            path="*"
+            element={
+              <MainIsLoading
+                action="waiting"
+                state={!isLoading && document.readyState === 'complete'}
+              />
+            }
+          />
         )}
       </Routes>
     </BrowserRouter>

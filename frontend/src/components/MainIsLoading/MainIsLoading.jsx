@@ -3,7 +3,7 @@ import { VscChromeClose } from 'react-icons/vsc';
 
 import styles from './MainIsLoading.module.css';
 
-const MainIsLoading = ({ action }) => {
+const MainIsLoading = ({ action, state }) => {
   let loadingItems = [];
   const qItem = 8;
   for (let i = 0; i < qItem; i++) {
@@ -22,7 +22,7 @@ const MainIsLoading = ({ action }) => {
   switch (action) {
     case 'waiting':
       return (
-        <section className={styles.sectionLoading}>
+        <section className={state ? styles.invisible : styles.sectionLoading}>
           <span>Loading</span>
           <div className={styles.divLoading}>
             <ul>{loadingItems.map(item => item)}</ul>
@@ -31,14 +31,14 @@ const MainIsLoading = ({ action }) => {
       );
     case 'fulfilled':
       return (
-        <section className={styles.sectionLoading}>
+        <section className={state ? styles.invisible : styles.sectionLoading}>
           <span>Loading</span>
           <VscCheck className={styles.check} />
         </section>
       );
     case 'rejected':
       return (
-        <section className={styles.sectionLoading}>
+        <section className={state ? styles.invisible : styles.sectionLoading}>
           <span>Loading</span>
           <VscChromeClose className={styles.cross} />
         </section>

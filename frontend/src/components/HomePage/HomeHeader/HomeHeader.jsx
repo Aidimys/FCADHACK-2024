@@ -11,6 +11,7 @@ const HomeHeader = () => {
   useEffect(() => {
     dispatch(setbreadLocation(location.pathname));
   }, [location.pathname]);
+
   return (
     <header className={styles.first}>
       <section></section>
