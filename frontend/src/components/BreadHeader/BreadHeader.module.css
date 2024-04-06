@@ -1,24 +1,9 @@
 .header {
   width: 100%;
-  background-color: #eba014;
+  background-color: #feba3a;
   padding: 1.3em;
   display: flex;
   flex-wrap: wrap;
 
   align-items: center;
-}
-.breadLink {
-  color: #fff;
-  font-size: 1.2em;
-  display: inherit;
-  justify-content: center;
-  align-items: inherit;
-}
-.arrows {
-  color: #fff;
-  font-size: 1.3em;
-  margin: 0em 0.3em 0em 0.3em;
-}
-.breadLink:hover {
-  text-decoration: underline;
 }
