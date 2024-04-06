@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 import HomeHeader from './components/HomePage/HomeHeader/HomeHeader';
 import HomeMain from './components/HomePage/HomeMain/HomeMain';
@@ -21,6 +20,7 @@ import MainIsLoading from './components/MainIsLoading/MainIsLoading';
 function App() {
   // const dispatch = useDispatch();
   //const isLoaded = useSelector(selectorIsMainLoaded);
+
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     window.onload = () => {
@@ -39,6 +39,7 @@ function App() {
                 <>
                   <HomeHeader />
                   <HomeMain />
+
                   <Footer />
                 </>
               }
