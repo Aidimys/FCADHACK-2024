@@ -1,5 +1,4 @@
 import styles from './NotFound.module.css';
-import './localIndex.css';
 
 const NotFound = () => {
   return (
