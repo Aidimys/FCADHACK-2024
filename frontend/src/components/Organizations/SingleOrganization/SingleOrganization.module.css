@@ -1,0 +1,25 @@
+.SingleOrganization{
+    width: 100%;
+    padding: 5em;
+}
+.singOrganInfo{
+    width: 100%;
+}
+.singOrganHader{
+    font-size: 50px;
+}
+.singOrganDesc{
+    font-size: 22px;
+    width: 10em;
+    float: left;
+}
+.singOrganContacts{
+    width: 10em;
+    font-size: 22px;
+}
+.SingleOrganSecHeader{
+    font-size: 30px;
+}
+.singOrganActiv{
+    width: 100%;
+}

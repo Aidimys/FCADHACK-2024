@@ -17,7 +17,12 @@ const HomeHeader = () => {
     <header className={styles.header}>
       <article className={styles.headerArticles1}>
         <section className={styles.firstPartSection1}>
-          <img src={logo} alt="MainLogo" className={styles.logo} />
+          <img
+            src={logo}
+            alt="MainLogo"
+            onClick={() => (location.pathname === '/' ? false : navigate('/'))}
+            className={styles.logo}
+          />
           <div className={styles.facultiesDiv}>
             <span className={styles.spanFaculties}>ФКП</span>
             <span className={styles.spanFaculties}>ФИТУ</span>

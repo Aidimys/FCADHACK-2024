@@ -52,6 +52,7 @@
 
 .logo {
   width: 5em;
+  cursor: pointer;
 }
 .spanFaculties {
   color: #fff;

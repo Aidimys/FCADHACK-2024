@@ -1,7 +1,13 @@
 import styles from './NotFound.module.css';
+import './localIndex.css';
 
 const NotFound = () => {
-  return <div>NotFound</div>;
+  return (
+    <main className={styles.main}>
+      <span className={styles._404}>404</span>
+      <span className={styles.notFound}>Not found</span>
+    </main>
+  );
 };
 
 export default NotFound;
