@@ -1,7 +1,9 @@
+import { useSelector } from 'react-redux';
+
 import styles from './Organizations.module.css';
 
 const Organizations = () => {
-  return <div>Organizations</div>;
+  return <main>{}</main>;
 };
 
 export default Organizations;

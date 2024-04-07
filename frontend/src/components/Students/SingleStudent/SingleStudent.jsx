@@ -1,7 +1,7 @@
 import style from './SingleStudent.module.css';
 
-const SingleStudent = () => {
-  return <div>SingleStudent</div>;
+const SingleStudent = ({ firstName, lastName, cardNumber, events }) => {
+  return <section>SingleStudent</section>;
 };
 
 export default SingleStudent;

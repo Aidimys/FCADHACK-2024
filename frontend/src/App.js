@@ -15,8 +15,12 @@ import SingleOrganization from './components/Organizations/SingleOrganization/Si
 import MainIsLoading from './components/MainIsLoading/MainIsLoading';
 import {
   fetchActivity,
-  selectorIsLoading,
+  selectorIsLoading as selectorIsLoadingActivity,
 } from './redux/slices/activityListSlice';
+import {
+  fetchStudents,
+  selectorIsLoading as selectorIsLoadingStudents,
+} from './redux/slices/studentsListSlice';
 //import {
 // setIsMainLoaded,
 // selectorIsMainLoaded,
@@ -27,17 +31,21 @@ function App() {
 
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const GET_URl = 'http://localhost:5000/activity';
+  const GET_URL_ACTIVITY = 'http://localhost:5000/activity';
+  const GET_URL_STUDENTS = 'http://localhost:5000/students';
 
-  const isLoading = useSelector(selectorIsLoading);
+  const isLoadingActivity = useSelector(selectorIsLoadingActivity);
+  const isLoadingStudents = useSelector(selectorIsLoadingStudents);
+
   useEffect(() => {
-    dispatch(fetchActivity(GET_URl));
+    dispatch(fetchActivity(GET_URL_ACTIVITY));
+    dispatch(fetchStudents(GET_URL_STUDENTS));
   }, []);
   useEffect(() => {
-    if (!isLoading) {
+    if (!isLoadingActivity && !isLoadingStudents) {
       setTimeout(() => setIsLoaded(true), 1000);
     }
-  }, [isLoading]);
+  }, [isLoadingActivity, isLoadingStudents]);
   return (
     <BrowserRouter>
       <Routes>
@@ -120,7 +128,11 @@ function App() {
             element={
               <MainIsLoading
                 action="waiting"
-                state={!isLoading && document.readyState === 'complete'}
+                state={
+                  !isLoadingActivity &&
+                  !isLoadingStudents &&
+                  document.readyState === 'complete'
+                }
               />
             }
           />

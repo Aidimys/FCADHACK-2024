@@ -10,7 +10,7 @@ const HomeMain = () => {
   return (
     <main>
       {activityList.map(item => (
-        <ActivityCard {...item} />
+        <ActivityCard key={item.id} {...item} />
       ))}
     </main>
   );
